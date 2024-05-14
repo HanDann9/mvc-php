@@ -2,7 +2,7 @@
 
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
 	/** database config **/
-	define('DBNAME', 'php_demo');
+	define('DBNAME', 'mvc_php');
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
 	define('DBPASS', '');
