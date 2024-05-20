@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function ($className) {
-	$classPath = "../app/models/" . ucfirst($className) . ".php";
+	$classPath = "app/models/" . ucfirst($className) . ".php";
 
 	if (file_exists($classPath)) {
 		require $classPath;
@@ -13,4 +13,3 @@ require 'functions.php';
 require 'Database.php';
 require 'Model.php';
 require 'Controller.php';
-require 'App.php';

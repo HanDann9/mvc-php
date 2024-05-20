@@ -3,18 +3,18 @@
 
 trait Controller
 {
-
 	public function view($name, $data = [])
 	{
-		if (!empty($data))
-			extract($data);
+		$filename = "app/views/" . $name . ".view.php";
 
-		$filename = "../app/views/" . $name . ".view.php";
+		if (!empty($data)) {
+			extract($data);
+		}
+
 		if (file_exists($filename)) {
 			require $filename;
 		} else {
-			$filename = "../app/views/404.view.php";
-			require $filename;
+			require "app/views/404.view.php";
 		}
 	}
 }

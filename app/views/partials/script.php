@@ -3,10 +3,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
 
 <!-- JS -->
-<script src="<?= ROOT ?>/assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= ROOT ?>/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="<?= ROOT ?>/assets/plugins/toastr/toastr.min.js"> </script>
-<link rel="stylesheet" href="<?= ROOT ?>/assets/plugins/toastr/toastr.min.css" />
+<script src="<?= ROOT ?>/public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= ROOT ?>/public/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="<?= ROOT ?>/public/assets/plugins/toastr/toastr.min.js"> </script>
+<link rel="stylesheet" href="<?= ROOT ?>/public/assets/plugins/toastr/toastr.min.css" />
 <script>
     toastr.options = {
         closeButton: false,

@@ -33,9 +33,9 @@ class User
 			}
 		}
 
-		if (empty($data['name'])) {
-			$this->errors['name'] = "Name is required";
-		}
+		// if (empty($data['name'])) {
+		// 	$this->errors['name'] = "Name is required";
+		// }
 
 		if (empty($data['password'])) {
 			$this->errors['password'] = "Password is required";
@@ -78,31 +78,29 @@ class User
 	public function validateLogin($data)
 	{
 		$user = new User();
-
 		$this->errors = [];
 
-		if (empty($data['email'])) {
+		$email = isset($data['email']) ? $data['email'] : '';
+		$password = isset($data['password']) ? $data['password'] : '';
+
+		if (empty($email)) {
 			$this->errors['email'] = "Email is required";
-		} else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+		} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			$this->errors['email'] = "Invalid email format";
 		} else {
-			$row = $user->first(['email' => $data['email']]);
+			$row = $user->first(['email' => $email]);
 
 			if (!$row) {
 				$this->errors['email'] = "Email not exists";
-			} else if ($row->password != $data['password']) {
-				$this->errors['email'] = "Invalid email or password";
+			} elseif (!password_verify($password, $row['password'])) {
+				$this->errors['email'] = "Password is incorrect";
 			}
 		}
 
-		if (empty($data['password'])) {
+		if (empty($password)) {
 			$this->errors['password'] = "Password is required";
 		}
 
-		if (empty($this->errors)) {
-			return true;
-		}
-
-		return false;
+		return empty($this->errors);
 	}
 }

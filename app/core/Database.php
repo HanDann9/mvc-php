@@ -4,8 +4,8 @@ trait Database
 {
 	private function connect()
 	{
-		$string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
-		$con = new PDO($string, DBUSER, DBPASS);
+		$string = "mysql:hostname=" . DB_HOST . ";dbname=" . DB_NAME;
+		$con = new PDO($string, DB_USER, DB_PASS);
 		return $con;
 	}
 

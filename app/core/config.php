@@ -2,20 +2,20 @@
 
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
 	/** database config **/
-	define('DBNAME', 'mvc_php');
-	define('DBHOST', 'localhost');
-	define('DBUSER', 'root');
-	define('DBPASS', '');
-	define('DBDRIVER', '');
+	define('DB_NAME', 'mvc_php');
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASS', '');
+	define('DB_DRIVER', '');
 
-	define('ROOT', 'http://localhost/MVC/public');
+	define('ROOT', 'http://localhost:3000');
 } else {
 	/** database config **/
-	define('DBNAME', 'my_db');
-	define('DBHOST', 'localhost');
-	define('DBUSER', 'root');
-	define('DBPASS', '');
-	define('DBDRIVER', '');
+	define('DB_NAME', 'my_db');
+	define('DB_HOST', 'localhost');
+	define('DB_USER', 'root');
+	define('DB_PASS', '');
+	define('DB_DRIVER', '');
 
 	define('ROOT', 'https://www.yourwebsite.com');
 }
